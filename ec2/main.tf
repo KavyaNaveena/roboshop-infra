@@ -11,16 +11,19 @@ resource "aws_instance" "ec2" {
   ami                    = data.aws_ami.ami.image_id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.sg.id]
-  tags = {
+  tags                   = {
     Name = var.component
   }
+}
+resource "null_resource" "provisioner" {
   provisioner "remote-exec" {
     connection {
-      host=self.public_ip
-      user="centos"
-      password="DevOps321"
+      host     = aws_instance.ec2.public_ip
+      user     = "centos"
+      password = "DevOps321"
     }
-     inline = [
+
+    inline = [
         "ansible-pull -i localhost, -U https://github.com/KavyaNaveena/roboshop-ansible.git roboshop.yml -e role_name=${var.component}"
      ]
   }
