@@ -16,7 +16,7 @@ resource "null_resource" "provisioner" {
     }
 
     inline = [
-        "ansible-pull -i localhost, -U https://github.com/KavyaNaveena/roboshop-ansible.git roboshop.yml -e role_name=${var.component}"
+        "ansible-pull -i localhost, -U https://github.com/KavyaNaveena/roboshop-ansible.git roboshop.yml -e role_name=${var.component} -e env=${var.env}"
      ]
   }
 }
