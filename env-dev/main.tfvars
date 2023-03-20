@@ -1,3 +1,5 @@
+env = "dev"
+
 instances = {
   frontend = {
     name = "frontend"
@@ -41,4 +43,3 @@ instances = {
   }
 }
 
-env = "dev"
