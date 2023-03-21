@@ -5,5 +5,12 @@ resource "aws_ssm_parameter" "parameters" {
   type  = var.parameters[count.index].type
 }
 
-variable "parameters" {
+resource "aws_ssm_parameter" "secrets" {
+  count = length(var.secrets)
+  name  = var.secrets[count.index].name
+  value = var.secrets[count.index].value
+  type  = var.secrets[count.index].type
 }
+
+variable "parameters" {}
+variable  "secrets"   {}
