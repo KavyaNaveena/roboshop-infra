@@ -24,5 +24,11 @@ parameters = [
 
 ### THIS IS NOT GOING TO BE THE PRACTICE IN COMPANIES, WE SHOULD NOT KEEP PASSWORDS IN GIT REPOS
 secrets = [
-  { name = "test", value = "8080", type = "SecureString" }
+  { name = "dev.mysql.password", value = "RoboShop@1", type = "SecureString" },
+  { name = "dev.mysql.amqp_user", value = "roboShop1", type = "SecureString" },
+  { name = "dev.mysql.amqp_pass", value = "roboShop123", type = "SecureString" },
+  { name = "dev.rabbitmq.amqp_user", value = "roboShop1", type = "SecureString" },
+  { name = "dev.rabbitmq.amqp_pass", value = "roboShop123", type = "SecureString" }
 ]
+
+
