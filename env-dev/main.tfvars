@@ -36,6 +36,7 @@ instances = {
   shipping = {
     name = "shipping"
     type = "t3.micro"
+    monitor = true
   }
   rabbitmq = {
     name = "rabbitmq"
